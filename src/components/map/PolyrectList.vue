@@ -27,6 +27,7 @@ export default {
       'delAreaList',
     ]),
     init() {
+      // debugger
       this.createAreaList()
     },
     clear() {
@@ -55,10 +56,11 @@ export default {
             strokeColor: item.strokeColor,
             strokeWeight: 6,
             strokeOpacity: 0.2,
-            fillOpacity: 1,
+            fillOpacity: 0.3,
             fillColor: item.fillColor,
             zIndex: 50,
           })
+          console.log(polygon.getBounds(),'getBounds')
           polygon.on('dblclick', () => {
             // console.log('dblclick')
             this.cleanEditor()
@@ -109,13 +111,13 @@ export default {
           })
           polygon.on('mouseover', () => {
             polygon.setOptions({
-              fillOpacity: 0.3,
+              fillOpacity: 0.1,
             })
             this.setPointIndex(Index)
           })
           polygon.on('mouseout', () => {
             polygon.setOptions({
-              fillOpacity: 1,
+              fillOpacity: 0.5,
               fillColor: item.fillColor,
             })
             this.setPointIndex(null)

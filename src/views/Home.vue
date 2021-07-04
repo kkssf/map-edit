@@ -2,6 +2,7 @@
   <div class="home">
     <div class="map-contain">
       <AMap :opts="opts">
+        <image-layers />
         <polyrect-list />
       </AMap>
     </div>
@@ -16,18 +17,21 @@
 import AMap from '@/components/map/AMap'
 import PolyrectList from '@/components/map/PolyrectList'
 import ControlView from '@/components/ControlView'
+import ImageLayers from '@/components/map/ImageLayers'
 export default {
   name: 'Home',
   components: {
     AMap,
     PolyrectList,
     ControlView,
+    ImageLayers,
   },
   data() {
     return {
       opts: {
         zoom: 10,
         center: [120.672913, 27.980921],
+        // center: [116.33719, 39.942384],
       },
       dialogFormVisible: false,
       form: {
@@ -43,9 +47,7 @@ export default {
       formLabelWidth: '120px',
     }
   },
-  methods:{
-
-  }
+  methods: {},
 }
 </script>
 <style lang="scss" scoped>
